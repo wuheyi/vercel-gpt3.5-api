@@ -5,7 +5,7 @@
     ],
     "routes": [
         { "src": "/", "dest": "main.py" },
-        { "src": "/chatgpt", "methods": ["POST"], "dest": "main.py" },
+        { "src": "/chatgpt", "methods": ["GET", "POST"], "dest": "main.py" },
         { "src": "/docs", "dest": "main.py" },
         { "src": "/openapi.json", "dest": "main.py" }
     ]

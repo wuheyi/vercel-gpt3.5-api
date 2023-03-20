@@ -6,7 +6,8 @@ from models import ChatGPTReq
 
 
 app = FastAPI()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+openai.api_key = OPENAI_API_KEY
 
 
 @app.get("/")
@@ -30,3 +31,7 @@ async def chatgpt(req: ChatGPTReq):
         model="gpt-3.5-turbo",
         messages=req.messages
     )
+
+@app.get("/chatgpt")
+async def chatgpt():
+    return {"OPENAI_API_KEY": OPENAI_API_KEY, "all_env": os.environ}
