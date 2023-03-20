@@ -31,7 +31,3 @@ async def chatgpt(req: ChatGPTReq):
         model="gpt-3.5-turbo",
         messages=req.messages
     )
-
-@app.get("/chatgpt")
-async def chatgpt():
-    return {"OPENAI_API_KEY": OPENAI_API_KEY, "all_env": os.environ}
