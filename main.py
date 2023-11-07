@@ -14,7 +14,7 @@ openai.api_key = OPENAI_API_KEY
 async def read_root():
     return {"message": "Hello World"}
 
-@app.post("/chatgpt")
+@app.post("/v1/chat/completions")
 async def chatgpt(req: ChatGPTReq):
     """
     请求格式：
